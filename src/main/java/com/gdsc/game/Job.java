@@ -8,7 +8,20 @@ public enum Job {
     KNIGHT("Knight",100,0,Arrays.asList("attack,defense")),
     WIZARD("Wizard",50,50,Arrays.asList("defense,attack2,attack3,attackHard"));
 
+    public String getJob() {
+        return job;
+    }
+
     private String job;
+
+    public int getHp() {
+        return hp;
+    }
+
+    public int getMp() {
+        return mp;
+    }
+
     private int hp;
     private int mp;
     private List<String> skills;
