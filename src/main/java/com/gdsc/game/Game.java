@@ -22,8 +22,8 @@ public class Game  {
 
 
     public Game() { //매개변수 turn은 총 횟수
-        characters.put("knight",new Character("knight"));
-        characters.put("slime",new Character("slime"));
+        characters.put("knight",new Character());
+        characters.put("slime",new Character());
         this.end = 7;
     }
 
