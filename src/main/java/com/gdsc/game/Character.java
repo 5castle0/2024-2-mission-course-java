@@ -1,5 +1,10 @@
 package com.gdsc.game;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 interface interfaceCharacter{
 
     void setName(String name);
@@ -7,11 +12,46 @@ interface interfaceCharacter{
     void losemp(int digit);
     boolean alive();
 }
-
+@Entity
 public class Character implements interfaceCharacter{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
     private String name;
     private int hp;
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public void setMp(int mp) {
+        this.mp = mp;
+    }
+
     private int mp;
+
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
+    }
+
+    private String job;
+
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    private int level;
 
     private int shield;
 
@@ -27,8 +67,6 @@ public class Character implements interfaceCharacter{
 
 
 
-
-
     public int getShield() {
         return shield;
     }
@@ -37,10 +75,7 @@ public class Character implements interfaceCharacter{
         this.shield = shield;
     }
 
-    public Character(String name){
-        this.name = name;
-        this.hp = 50;
-        this.mp = 10;
+    public Character(){
     }
 
     public int getHp() {
